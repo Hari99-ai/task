@@ -219,6 +219,7 @@ select {
   background: rgba(255, 255, 255, 0.04);
   color: var(--text);
   padding: 12px 14px;
+  color-scheme: dark;
 }
 
 .filters select option {
