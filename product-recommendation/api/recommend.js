@@ -1,10 +1,15 @@
-const express = require("express");
-const products = require("../products");
-const { recommendProducts } = require("../../shared/recommendation-core");
+const products = require("../backend/products");
+const { recommendProducts } = require("../shared/recommendation-core");
 
-const router = express.Router();
+module.exports = async function handler(req, res) {
+  if (req.method !== "POST") {
+    res.setHeader("Allow", "POST");
+    return res.status(405).json({
+      error: "Method not allowed",
+      message: "Only POST is supported.",
+    });
+  }
 
-router.post("/recommend", async (req, res) => {
   try {
     const { query } = req.body || {};
     const trimmedQuery = String(query || "").trim();
@@ -18,17 +23,15 @@ router.post("/recommend", async (req, res) => {
 
     const recommendedProducts = await recommendProducts(trimmedQuery, products);
 
-    res.json({
+    res.status(200).json({
       query: trimmedQuery,
       products: recommendedProducts,
     });
   } catch (error) {
-    console.error("Recommendation error:", error);
+    console.error("Recommendation API error:", error);
     res.status(500).json({
       error: "Recommendation failed",
       message: "Unable to generate recommendations at the moment.",
     });
   }
-});
-
-module.exports = router;
+};

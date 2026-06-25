@@ -91,6 +91,25 @@ If your backend runs on a different URL, set:
 VITE_API_BASE_URL=http://localhost:5000
 ```
 
+## Deploying to Vercel
+
+This project is configured to deploy the frontend and API together on Vercel.
+
+1. Import the repository into Vercel from GitHub.
+2. Set the project root to the repository root.
+3. Add these environment variables in Vercel:
+
+```env
+OPENROUTER_API_KEY=your_key_here
+OPENROUTER_MODEL=openai/gpt-4.1-mini
+OPENROUTER_REFERER=https://your-vercel-domain.vercel.app
+OPENROUTER_APP_NAME=Product Recommendation System
+```
+
+4. Deploy.
+
+The frontend calls `/api/recommend` in production, so no separate backend URL is needed on Vercel.
+
 ## API
 
 ### `POST /recommend`

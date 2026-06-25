@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "buildCommand": "npm --prefix product-recommendation/frontend install && npm --prefix product-recommendation/frontend run build",
+  "outputDirectory": "product-recommendation/frontend/dist",
+  "functions": {
+    "api/*.js": {
+      "runtime": "nodejs20.x"
+    }
+  }
+}
