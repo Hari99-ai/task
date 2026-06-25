@@ -93,10 +93,10 @@ VITE_API_BASE_URL=http://localhost:5000
 
 ## Deploying to Vercel
 
-This project is configured to deploy the frontend and API together on Vercel.
+This repository is configured to deploy the frontend and API together on Vercel from the repository root.
 
 1. Import the repository into Vercel from GitHub.
-2. Set the project root to the repository root.
+2. Keep the project root at the repository root.
 3. Add these environment variables in Vercel:
 
 ```env
