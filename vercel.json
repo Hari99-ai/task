@@ -1,5 +1,4 @@
 {
-  "version": 2,
-  "buildCommand": "npm --prefix product-recommendation/frontend install && npm --prefix product-recommendation/frontend run build",
+  "buildCommand": "cd product-recommendation/frontend && npm install && npm run build",
   "outputDirectory": "product-recommendation/frontend/dist"
 }
