@@ -221,6 +221,11 @@ select {
   padding: 12px 14px;
 }
 
+.filters select option {
+  background-color: #121a33;
+  color: #edf2ff;
+}
+
 .section-header {
   display: flex;
   justify-content: space-between;
